@@ -1,0 +1,22 @@
+import discord
+
+
+client = discord.Client()
+Token ='ODc2MjIwMjg3OTg3ODg4MTY5.YRg5vA.GgGxyCEr-ErxJtplmEgkrlsIcnE'
+
+
+@client.event
+async def on_ready():
+    print('we have logged in as(0.user)'.format(client))
+
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('aite'):
+        await message.channel.send("sex")
+
+
+client.run(Token)
